@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>IA en Crudo · Webs gratuitas y útiles para tu día a día</title>
-<meta name="description" content="Siete webs gratuitas con datos oficiales: gasolineras más baratas, factura de la luz, vivienda, finanzas personales, viajes, festivos y puentes, y elecciones del 29-N.">
+<title>IA en Crudo · Gasolina, luz y festivos de hoy con datos oficiales</title>
+<meta name="description" content="El precio medio de la gasolina y el diésel, el precio de la luz hora a hora y los próximos festivos, actualizados cada día con datos oficiales. Y siete webs gratuitas para ahorrar y decidir mejor.">
 <link rel="canonical" href="https://iaencrudo.es/">
 <meta property="og:title" content="IA en Crudo · Webs gratuitas y útiles">
 <meta property="og:description" content="Siete webs gratuitas con datos oficiales para ahorrar y decidir mejor.">
@@ -32,6 +32,17 @@ h1{font-size:clamp(28px,5vw,40px);line-height:1.15;margin:0 0 12px}
 .card h2 a:hover{color:var(--acc)}
 .card p{margin:0 0 12px;color:var(--sub);font-size:15px}
 .card ul{margin:0 0 14px;padding-left:18px;font-size:15px}
+.datos{display:grid;grid-template-columns:repeat(auto-fill,minmax(420px,1fr));gap:16px;margin:24px 0 8px}
+@media (max-width:480px){.datos{grid-template-columns:1fr}}
+.dato{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px}
+.dato h2{font-size:20px;margin:0 0 8px}
+.dato p{margin:0 0 10px;font-size:15px}
+.dato .cifra{font-size:18px;margin-bottom:12px}
+.dato .cifra strong{color:var(--acc)}
+.dato .fuente,.actualizado{font-size:13px;color:var(--sub)}
+.dato .aviso{color:var(--sub)}
+.lista{margin:0 0 10px;padding-left:18px;font-size:15px}
+h2.seccion{font-size:24px;margin:40px 0 0}
 .card .ir{margin-top:auto;color:var(--acc);font-weight:600;text-decoration:none}
 section.texto{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:24px;margin:0 0 32px}
 section.texto h2{margin-top:0;font-size:22px}
@@ -48,6 +59,42 @@ footer a{color:var(--sub)}
 </header>
 
 <main>
+<h2 class="seccion">Hoy en datos</h2>
+<p class="actualizado">Actualizado el <time datetime="2026-11-15">domingo, 15 de noviembre de 2026, 21:24</time> (hora de Madrid). Esta página se rehace sola cada mañana y cada tarde con los datos oficiales del día.</p>
+<div class="datos">
+<section class="dato">
+<h2>Gasolina y diésel</h2>
+<p class="cifra"><strong>1,619 €/l</strong> gasolina 95 · <strong>1,837 €/l</strong> diésel</p>
+<p>Precio medio de hoy en 11.305 gasolineras. En la Península y Baleares, la gasolina 95 más barata de media está en <a href="https://repostabarato.iaencrudo.es/provincia/lleida">Lleida</a> (1,561 €/l) y la más cara, en <a href="https://repostabarato.iaencrudo.es/provincia/illes-balears">Illes Balears</a> (1,713 €/l): <strong>7,57 € más por llenar un depósito de 50 litros</strong>. En diésel, la más barata es Valencia (1,793 €/l) y la más cara, Illes Balears (1,931 €/l).</p>
+<p>Entre gasolineras la diferencia es todavía mayor: la gasolina 95 más barata de la Península y Baleares cuesta hoy 1,299 €/l (Plenergy, Castellar Del Vallès) y la más cara, 2,150 €/l. Por eso compensa mirar antes de repostar. Canarias, Ceuta y Melilla tienen otros impuestos y quedan fuera de la comparación (en Canarias la media es de 1,519 €/l).</p>
+<p class="fuente">Fuente: Ministerio para la Transición Ecológica, datos del 15 de noviembre de 2026, 18:44. Media simple de las gasolineras que venden cada combustible.</p>
+</section>
+<section class="dato">
+<h2>Precio de la luz</h2>
+<p class="cifra"><strong>0,1547 €/kWh</strong> de media hoy (PVPC)</p>
+<p>Es un 15,4 % menos que ayer. La hora más barata es la de 13:00–14:00 (0,0544 €/kWh) y la más cara, la de 19:00–20:00 (0,2410 €/kWh): 4,4 veces más. Poner la lavadora o el lavavajillas en las horas baratas es la forma más sencilla de bajar la factura si tienes la tarifa regulada.</p>
+<p><a href="https://ahorroluz.iaencrudo.es/precio-luz-hoy">Precio de la luz hora a hora</a> · <a href="https://ahorroluz.iaencrudo.es/precio-luz-manana">ya está el de mañana</a></p>
+<p class="fuente">Fuente: Red Eléctrica (REE), término de energía del PVPC con peajes y cargos, sin impuestos.</p>
+</section>
+<section class="dato">
+<h2>Próximos festivos</h2>
+<ul class="lista"><li><strong>lunes 7 de diciembre</strong>: Lunes siguiente al Día de la Constitución Española, festivo en 10 de 19 territorios</li>
+<li><strong>martes 8 de diciembre</strong>: Inmaculada Concepción, festivo en toda España</li>
+<li><strong>viernes 25 de diciembre</strong>: Natividad del Señor, festivo en toda España</li></ul>
+<p>Que un festivo lo sea en tu comunidad depende del BOE de cada año: el lunes 7 de diciembre solo es fiesta en 10 de los 19 territorios (17 comunidades, Ceuta y Melilla). Además, cada ayuntamiento tiene dos fiestas locales.</p>
+<p><a href="https://vacacionable.iaencrudo.es/es-festivo-manana">¿Mañana es festivo?</a> · <a href="https://vacacionable.iaencrudo.es/calendario-laboral-2027">Calendario laboral 2027</a></p>
+<p class="fuente">Fuente: resolución anual de fiestas laborales del BOE.</p>
+</section>
+<section class="dato">
+<h2>Elecciones del 29-N</h2>
+<p class="cifra"><strong>Faltan 14 días</strong> para las elecciones generales del 29 de noviembre</p>
+<p>No todos los votos pesan lo mismo: en Teruel sale un diputado por cada 35.451 electores y en Madrid, uno por cada 137.488. Un voto en Teruel pesa 3,9 veces más que uno en Madrid, porque la ley electoral da a cada provincia un mínimo de 2 diputados (1 a Ceuta y Melilla) y reparte el resto según la población.</p>
+<p><a href="https://elecciones.iaencrudo.es/cuanto-vale-tu-voto">Cuánto vale tu voto en tu provincia</a> · <a href="https://elecciones.iaencrudo.es/test-politico">Test político</a> · <a href="https://elecciones.iaencrudo.es/">Candidatos de tu provincia</a></p>
+<p class="fuente">Fuente: censo electoral de 2023 (Ministerio del Interior) y escaños del Real Decreto 806/2026.</p>
+</section>
+</div>
+
+<h2 class="seccion">Nuestras webs</h2>
 <div class="grid">
 <article class="card">
 <h2><a href="https://repostabarato.iaencrudo.es/">RepostaBarato</a></h2>
@@ -102,6 +149,7 @@ footer a{color:var(--sub)}
 <section class="texto">
 <h2>Cómo hacemos estas webs</h2>
 <p>Las construye Aarón Gómez Vera, programador, con ayuda de inteligencia artificial (Claude Code), y el proceso se cuenta en vídeo en el canal <a href="https://www.youtube.com/@iaencrudo">IA en Crudo</a>. Los datos salen de fuentes públicas y oficiales, como la API de precios de carburantes del Ministerio, el BOE o los boletines autonómicos, y cada web explica en su metodología de dónde vienen, cómo se calculan y qué límites tienen.</p>
+<p>Las cifras de «Hoy en datos» se calculan así: el precio medio de los carburantes es la media simple de todas las gasolineras que venden cada combustible, según el listado que publica el Ministerio para la Transición Ecológica; la comparación entre provincias deja fuera Canarias, Ceuta y Melilla porque sus impuestos son distintos. El precio de la luz es el PVPC que publica Red Eléctrica para cada hora del día, sin impuestos. Los festivos son los de la resolución anual del BOE para cada comunidad, sin contar las fiestas locales.</p>
 <p>Si ves un error o echas algo en falta, escríbenos a <a href="mailto:contacto@iaencrudo.es">contacto@iaencrudo.es</a>.</p>
 </section>
 </main>

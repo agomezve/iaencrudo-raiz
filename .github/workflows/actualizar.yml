@@ -1,0 +1,37 @@
+# Ruta: .github/workflows/actualizar.yml
+# Rehace index.html con los datos del día (carburantes, luz, festivos y elecciones) y lo sube.
+# GitHub Pages publica el cambio solo, porque la web se sirve desde la rama main.
+# GitHub desactiva los cron si el repositorio pasa 60 días sin actividad: reactívalo en Actions.
+name: Actualizar portada
+
+on:
+  schedule:
+    - cron: '40 5 * * *'   # 6:40 / 7:40 en Madrid: gasolina del día
+    - cron: '35 19 * * *'  # 20:35 / 21:35 en Madrid: ya está la luz de mañana
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: actualizar-portada
+  cancel-in-progress: false
+
+jobs:
+  actualizar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Generar index.html
+        run: node scripts/generar.mjs
+      - name: Subir si ha cambiado
+        run: |
+          if git diff --quiet index.html; then echo "Sin cambios"; exit 0; fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html
+          git commit -m "Datos del día en la portada"
+          git push
