@@ -7,6 +7,7 @@
 // Sin dependencias. Si una fuente falla, ese bloque muestra un aviso y el resto se genera igual.
 // Lo lanza el workflow "Actualizar portada" cada mañana y cada tarde.
 import { readFileSync, writeFileSync } from 'node:fs';
+import { BARRA, PIE, ESTILOS_EXTRA, ORGANIZACION, URL_BASE, jsonLd, faqLd, faqHtml } from './comun.mjs';
 
 const RAIZ = new URL('..', import.meta.url);
 const RB = 'https://repostabarato.iaencrudo.es';
@@ -154,11 +155,31 @@ const diasElec = Math.round((Date.parse(`${ELECCIONES}T00:00:00Z`) - Date.parse(
 const bElec = diasElec > 0
   ? `<p class="cifra"><strong>${diasElec === 1 ? 'Mañana' : `Faltan ${diasElec} días`}</strong> para las elecciones generales del 29 de noviembre</p>
 <p>No todos los votos pesan lo mismo: en Teruel sale un diputado por cada 35.451 electores y en Madrid, uno por cada 137.488. Un voto en Teruel pesa 3,9 veces más que uno en Madrid, porque la ley electoral da a cada provincia un mínimo de 2 diputados (1 a Ceuta y Melilla) y reparte el resto según la población.</p>
-<p><a href="https://elecciones.iaencrudo.es/cuanto-vale-tu-voto">Cuánto vale tu voto en tu provincia</a> · <a href="https://elecciones.iaencrudo.es/test-politico">Test político</a> · <a href="https://elecciones.iaencrudo.es/">Candidatos de tu provincia</a></p>
+<p><a href="https://elecciones.iaencrudo.es/cuanto-vale-tu-voto">Cuánto vale tu voto en tu provincia</a> · <a href="https://elecciones.iaencrudo.es/test-politico">Test político</a> · <a href="https://elecciones.iaencrudo.es/provincias">Candidatos de tu provincia</a></p>
 <p class="fuente">Fuente: censo electoral de 2023 (Ministerio del Interior) y escaños del Real Decreto 806/2026.</p>`
   : `<p class="cifra"><strong>Elecciones generales del 29 de noviembre</strong></p>
 <p>Resultados por provincia, escaños y pactos posibles en Elecciones al Día.</p>
 <p><a href="https://elecciones.iaencrudo.es/resultados-29n">Resultados del 29-N</a> · <a href="https://elecciones.iaencrudo.es/cuanto-vale-tu-voto">Cuánto vale tu voto</a></p>`;
+
+
+// ---------- Preguntas frecuentes (visibles y en JSON-LD) ----------
+const PREGUNTAS = [
+  { q: '¿Cada cuánto se actualizan los datos de esta página?', a: 'La portada se rehace sola dos veces al día, por la mañana y por la tarde, con los últimos datos oficiales. Las webs enlazadas se actualizan con la frecuencia de cada fuente: los precios de las gasolineras, cada hora; el precio de la luz, cada día cuando Red Eléctrica publica el del día siguiente.' },
+  { q: '¿De dónde sale el precio de la gasolina y el diésel?', a: 'Del listado oficial de precios de carburantes del Ministerio para la Transición Ecológica y el Reto Demográfico, al que las gasolineras están obligadas a comunicar sus precios. El precio medio es la media simple de todas las gasolineras que venden cada combustible.' },
+  { q: '¿El precio de la luz que aparece incluye impuestos?', a: 'No. Es el término de energía del PVPC (la tarifa regulada) que publica Red Eléctrica para cada hora, con peajes y cargos pero sin IVA ni impuesto eléctrico. Sirve para saber qué horas son más baratas si tienes la tarifa regulada.' },
+  { q: '¿Por qué Canarias, Ceuta y Melilla no entran en la comparación de provincias?', a: 'Porque allí los carburantes no pagan el IVA y los impuestos especiales de la Península, sino el IGIC (Canarias) y el IPSI (Ceuta y Melilla). Compararlos con el resto daría una idea falsa de qué provincia es más barata, así que se muestran aparte.' },
+  { q: '¿Los próximos festivos incluyen las fiestas locales?', a: 'No. Son los festivos de la resolución anual del BOE para cada comunidad autónoma. Cada ayuntamiento añade además dos fiestas locales, que puedes consultar para tu capital en <a href="https://vacacionable.iaencrudo.es/">Vacacionable</a>.' },
+  { q: '¿Cuánto cuestan las webs de IA en Crudo?', a: 'Nada. Ninguna pide registro ni cobra por usar sus herramientas. Se financian con publicidad y, en las de viajes, con enlaces de afiliado señalados como tales.' },
+];
+const LD = jsonLd({
+  '@context': 'https://schema.org',
+  '@graph': [
+    { '@type': 'WebSite', '@id': `${URL_BASE}/#web`, url: `${URL_BASE}/`, name: 'IA en Crudo', inLanguage: 'es', publisher: { '@id': `${URL_BASE}/#organizacion` } },
+    ORGANIZACION,
+    { '@type': 'WebPage', '@id': `${URL_BASE}/#pagina`, url: `${URL_BASE}/`, name: 'Precio de la gasolina, la luz y los festivos de hoy', inLanguage: 'es', dateModified: new Date().toISOString(), isPartOf: { '@id': `${URL_BASE}/#web` }, about: { '@id': `${URL_BASE}/#organizacion` } },
+    faqLd(PREGUNTAS),
+  ],
+});
 
 const actualizado = new Date().toLocaleString('es-ES', { timeZone: 'Europe/Madrid', dateStyle: 'full', timeStyle: 'short' });
 const html = readFileSync(new URL('scripts/plantilla.txt', RAIZ), 'utf8')
@@ -167,7 +188,12 @@ const html = readFileSync(new URL('scripts/plantilla.txt', RAIZ), 'utf8')
   .replace('{{GASOLINA}}', bGas)
   .replace('{{LUZ}}', bLuz)
   .replace('{{FESTIVOS}}', bFest)
-  .replace('{{ELECCIONES}}', bElec);
+  .replace('{{ELECCIONES}}', bElec)
+  .replace('{{LD}}', LD)
+  .replace('{{ESTILOS_EXTRA}}', ESTILOS_EXTRA)
+  .replace('{{BARRA}}', BARRA)
+  .replace('{{FAQ}}', faqHtml(PREGUNTAS))
+  .replace('{{PIE}}', PIE);
 if (/\{\{[A-Z_]+\}\}/.test(html)) throw new Error('Quedan marcadores sin rellenar en la plantilla');
 writeFileSync(new URL('index.html', RAIZ), html);
 console.log(`[generar] index.html: gasolina ${gas ? 'ok' : 'SIN DATOS'}, luz ${pvpc ? 'ok' : 'SIN DATOS'}, festivos ${fest ? 'ok' : 'SIN DATOS'}.`);

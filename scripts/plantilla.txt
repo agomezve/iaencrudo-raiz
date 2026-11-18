@@ -3,19 +3,21 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>IA en Crudo · Gasolina, luz y festivos de hoy con datos oficiales</title>
-<meta name="description" content="El precio medio de la gasolina y el diésel, el precio de la luz hora a hora y los próximos festivos, actualizados cada día con datos oficiales. Y siete webs gratuitas para ahorrar y decidir mejor.">
+<title>Precio de la gasolina, la luz y festivos hoy | IA en Crudo</title>
+<meta name="description" content="Precio medio de la gasolina y el diésel, la luz hora a hora y los próximos festivos, con datos oficiales cada día. Y siete webs gratuitas para ahorrar.">
 <link rel="canonical" href="https://iaencrudo.es/">
-<meta property="og:title" content="IA en Crudo · Webs gratuitas y útiles">
-<meta property="og:description" content="Siete webs gratuitas con datos oficiales para ahorrar y decidir mejor.">
+<link rel="icon" href="/logo-96.png" type="image/png">
+<meta property="og:title" content="Gasolina, luz y festivos de hoy con datos oficiales">
+<meta property="og:description" content="El precio de la gasolina, la luz y los próximos festivos, cada día con datos oficiales. Y siete webs gratuitas para ahorrar y decidir mejor.">
 <meta property="og:url" content="https://iaencrudo.es/">
 <meta property="og:type" content="website">
+<meta property="og:image" content="https://iaencrudo.es/logo.png">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:description" content="El precio de la gasolina, la luz y los próximos festivos, cada día con datos oficiales. IA en Crudo.">
 <script>window.goatcounter = { path: function (p) { return location.host + p; } };</script>
 <script data-goatcounter="https://iaencrudo.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3004394150242621" crossorigin="anonymous"></script>
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Organization","name":"IA en Crudo","url":"https://iaencrudo.es/","email":"contacto@iaencrudo.es","sameAs":["https://www.youtube.com/@iaencrudo","https://www.tiktok.com/@iaencrudo","https://www.instagram.com/iaencrudo"]}
-</script>
+{{LD}}
 <style>
 :root{--bg:#f7f7f5;--card:#fff;--txt:#1d1d1f;--sub:#55555b;--line:#e3e3e0;--acc:#d9480f}
 @media (prefers-color-scheme:dark){:root{--bg:#141416;--card:#1e1e22;--txt:#f2f2f2;--sub:#a8a8b0;--line:#2e2e34;--acc:#ff8a4c}}
@@ -24,6 +26,7 @@ body{margin:0;background:var(--bg);color:var(--txt);font:16px/1.6 system-ui,-app
 .wrap{max-width:960px;margin:0 auto;padding:0 16px}
 header{padding:48px 0 24px}
 h1{font-size:clamp(28px,5vw,40px);line-height:1.15;margin:0 0 12px}
+.lema{font-size:18px;margin:0 0 8px}
 .lead{font-size:18px;color:var(--sub);margin:0;max-width:680px}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:16px;margin:32px 0}
 .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px;display:flex;flex-direction:column}
@@ -45,16 +48,21 @@ h1{font-size:clamp(28px,5vw,40px);line-height:1.15;margin:0 0 12px}
 h2.seccion{font-size:24px;margin:40px 0 0}
 .card .ir{margin-top:auto;color:var(--acc);font-weight:600;text-decoration:none}
 section.texto{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:24px;margin:0 0 32px}
+section.faq{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:24px;margin:0 0 32px}
+section.faq h2{margin-top:0;font-size:22px}
 section.texto h2{margin-top:0;font-size:22px}
 a{color:var(--acc)}
 footer{border-top:1px solid var(--line);padding:24px 0 40px;font-size:14px;color:var(--sub)}
 footer a{color:var(--sub)}
 </style>
+{{ESTILOS_EXTRA}}
 </head>
 <body>
 <div class="wrap">
+{{BARRA}}
 <header>
-<h1>Webs gratuitas para ahorrar y decidir mejor</h1>
+<h1>Precio de la gasolina, la luz y los festivos de hoy</h1>
+<p class="lema"><strong>IA en Crudo:</strong> webs gratuitas para ahorrar y decidir mejor.</p>
 <p class="lead">En IA en Crudo hacemos herramientas útiles con datos oficiales: dónde repostar más barato, cuánto pagas de luz, qué piso puedes permitirte, qué días pedir de vacaciones o a quién votar. Todas son gratuitas y no piden registro.</p>
 </header>
 
@@ -83,49 +91,49 @@ footer a{color:var(--sub)}
 <h2 class="seccion">Nuestras webs</h2>
 <div class="grid">
 <article class="card">
-<h2><a href="https://repostabarato.iaencrudo.es/">RepostaBarato</a></h2>
+<h2>RepostaBarato</h2>
 <p>La gasolinera más barata cerca de ti, con los precios oficiales del Ministerio para la Transición Ecológica.</p>
 <ul><li>Gasolina 95, 98 y diésel por provincia, ciudad y marca</li><li>Cuánto te ahorras por depósito</li></ul>
 <a class="ir" href="https://repostabarato.iaencrudo.es/">Buscar gasolinera →</a>
 </article>
 
 <article class="card">
-<h2><a href="https://ahorroluz.iaencrudo.es/">AhorroLuz</a></h2>
+<h2>AhorroLuz</h2>
 <p>Calculadoras para pagar menos luz y gas, con guías claras sobre la factura.</p>
 <ul><li>Precio de la luz de hoy y factura</li><li>Consumo de electrodomésticos, placas solares y calefacción</li></ul>
 <a class="ir" href="https://ahorroluz.iaencrudo.es/">Calcular mi factura →</a>
 </article>
 
 <article class="card">
-<h2><a href="https://viviendaclara.iaencrudo.es/">ViviendaClara</a></h2>
+<h2>ViviendaClara</h2>
 <p>Busca piso según lo que de verdad puedes pagar, con precios oficiales de alquiler y compra.</p>
 <ul><li>Datos de vivienda por provincia</li><li>Hipoteca, gastos y ayudas al alquiler</li></ul>
 <a class="ir" href="https://viviendaclara.iaencrudo.es/">Ver mi presupuesto →</a>
 </article>
 
 <article class="card">
-<h2><a href="https://capitalpractico.iaencrudo.es/">CapitalPráctico</a></h2>
+<h2>CapitalPráctico</h2>
 <p>Calculadoras de finanzas personales y guías sobre nóminas, ahorro, inversión y vivienda en España.</p>
 <ul><li>Sueldo neto, interés compuesto e hipoteca</li><li>Qué te descuentan en la nómina y por qué</li></ul>
 <a class="ir" href="https://capitalpractico.iaencrudo.es/">Hacer las cuentas →</a>
 </article>
 
 <article class="card">
-<h2><a href="https://vacacionable.iaencrudo.es/">Vacacionable</a></h2>
+<h2>Vacacionable</h2>
 <p>Festivos de tu comunidad y tu ciudad según el BOE, todos los puentes y qué días pedir para librar más.</p>
 <ul><li>Calendario laboral 2027 por comunidad y capital</li><li>¿Mañana es festivo? y puente de diciembre</li></ul>
 <a class="ir" href="https://vacacionable.iaencrudo.es/">Planear mis vacaciones →</a>
 </article>
 
 <article class="card">
-<h2><a href="https://viajachollo.iaencrudo.es/">ViajaChollo</a></h2>
+<h2>ViajaChollo</h2>
 <p>Vuelos y alojamiento baratos comparando buscadores, presupuesto del viaje y trucos para ahorrar.</p>
 <ul><li>Calculadora de presupuesto de viaje</li><li>Precios vigilados para el Black Friday</li></ul>
 <a class="ir" href="https://viajachollo.iaencrudo.es/">Buscar chollos →</a>
 </article>
 
 <article class="card">
-<h2><a href="https://elecciones.iaencrudo.es/">Elecciones al Día</a></h2>
+<h2>Elecciones al Día</h2>
 <p>Todo para votar en las elecciones generales del 29 de noviembre de 2026, sin ruido.</p>
 <ul><li>Candidatos de tu provincia según el BOE y propuestas con fuente</li><li>Test político, pactos, D'Hondt y voto por correo</li></ul>
 <a class="ir" href="https://elecciones.iaencrudo.es/">Preparar mi voto →</a>
@@ -134,15 +142,15 @@ footer a{color:var(--sub)}
 
 <section class="texto">
 <h2>Cómo hacemos estas webs</h2>
-<p>Las construye Aarón Gómez Vera, programador, con ayuda de inteligencia artificial (Claude Code), y el proceso se cuenta en vídeo en el canal <a href="https://www.youtube.com/@iaencrudo">IA en Crudo</a>. Los datos salen de fuentes públicas y oficiales, como la API de precios de carburantes del Ministerio, el BOE o los boletines autonómicos, y cada web explica en su metodología de dónde vienen, cómo se calculan y qué límites tienen.</p>
+<p>Las construye Aarón Gómez Vera, programador, con ayuda de inteligencia artificial (Claude Code), y el proceso se cuenta en vídeo en el canal IA en Crudo (<a href="/sobre-mi">quién está detrás</a>). Los datos salen de fuentes públicas y oficiales, como la API de precios de carburantes del Ministerio, el BOE o los boletines autonómicos, y cada web explica en su metodología de dónde vienen, cómo se calculan y qué límites tienen. El resumen de todas está en <a href="/como-hacemos-este-contenido">cómo hacemos este contenido</a>.</p>
 <p>Las cifras de «Hoy en datos» se calculan así: el precio medio de los carburantes es la media simple de todas las gasolineras que venden cada combustible, según el listado que publica el Ministerio para la Transición Ecológica; la comparación entre provincias deja fuera Canarias, Ceuta y Melilla porque sus impuestos son distintos. El precio de la luz es el PVPC que publica Red Eléctrica para cada hora del día, sin impuestos. Los festivos son los de la resolución anual del BOE para cada comunidad, sin contar las fiestas locales.</p>
-<p>Si ves un error o echas algo en falta, escríbenos a <a href="mailto:contacto@iaencrudo.es">contacto@iaencrudo.es</a>.</p>
+<p>Si ves un error o echas algo en falta, escríbenos desde la página de <a href="/contacto">contacto</a>.</p>
 </section>
+
+{{FAQ}}
 </main>
 
-<footer>
-<p>© 2026 IA en Crudo · <a href="mailto:contacto@iaencrudo.es">contacto@iaencrudo.es</a> · <a href="https://repostabarato.iaencrudo.es/aviso-legal">Aviso legal</a> · <a href="https://repostabarato.iaencrudo.es/politica-privacidad">Privacidad</a> · <a href="https://repostabarato.iaencrudo.es/politica-cookies">Cookies</a> · <a href="https://www.youtube.com/@iaencrudo">YouTube</a> · <a href="https://www.tiktok.com/@iaencrudo">TikTok</a> · <a href="https://www.instagram.com/iaencrudo">Instagram</a></p>
-</footer>
+{{PIE}}
 </div>
 </body>
 </html>
