@@ -33,12 +33,12 @@ escribir('sobre-mi.html', pagina({
   ruta: '/sobre-mi',
   titulo: 'Sobre mí: quién hace las webs de IA en Crudo',
   h1: 'Sobre mí',
-  descripcion: 'Soy Aarón Gómez Vera, programador backend. Hago webs útiles y gratuitas con datos oficiales y ayuda de IA, y cuento el proceso en vídeo.',
+  descripcion: 'Soy Aarón Gómez Vera, ingeniero informático y desarrollador full-stack. Hago webs gratuitas con datos oficiales y ayuda de IA, y lo cuento en vídeo.',
   ogDescripcion: 'Quién está detrás de IA en Crudo y de sus siete webs gratuitas con datos oficiales.',
   tipo: 'AboutPage',
   actualizado: ACTUALIZADO_LEGAL,
   ld: [faqLd(preguntasSobreMi)],
-  cuerpo: `<p>Soy <strong>${TITULAR}</strong>, programador backend en España. IA en Crudo es mi proyecto personal: construyo webs que resuelven dudas concretas de dinero y del día a día, con datos oficiales, y cuento en vídeo cómo las hago y cuánto dinero dan, desde cero.</p>
+  cuerpo: `<p>Soy <strong>${TITULAR}</strong>, ingeniero informático y desarrollador full-stack en España. IA en Crudo es mi proyecto personal: construyo webs que resuelven dudas concretas de dinero y del día a día, con datos oficiales, y cuento en vídeo cómo las hago y cuánto dinero dan, desde cero.</p>
 
 <h2>Qué hago</h2>
 <p>Cada web responde a una pregunta que mucha gente se hace a menudo: dónde repostar más barato hoy, a qué hora sale más barata la luz, qué piso puedo pagar, cuánto me queda de sueldo neto, si mañana es festivo o a quién votar en mi provincia. La respuesta tiene que estar en la primera pantalla y con su fuente al lado.</p>
